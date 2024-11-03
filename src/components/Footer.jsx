@@ -7,7 +7,8 @@ const Footer = () => {
       <div className="flex p-5 justify-around">
         <div className="text-center flex flex-col justify-center">
           
-          <h5>Important Links</h5>
+          <h3 className="text-white text-1xl">the federal polytechnic bida</h3>
+          <h5> (c) 2024.</h5>
         </div>
       </div>
     </footer>

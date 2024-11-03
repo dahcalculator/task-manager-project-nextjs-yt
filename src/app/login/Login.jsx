@@ -4,6 +4,8 @@ import { login } from "@/services/userService";
 import { useRouter } from "next/navigation";
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
+import Image from "next/image";
+import logo from "../../assets/logo.png"
 
 const Login = () => {
   const router = useRouter();
@@ -46,20 +48,32 @@ const Login = () => {
       <div className="col-span-4 col-start-5 ">
         <div className="py-5"></div>
 
-        <h1 className="text-3xl text-center">Login Here </h1>
 
-        <form action="#!" onSubmit={loginFormSubmitted}>
-          <div className="mt-3">
+        <div className="flex justify-center items-center  flex-col">
+          <Image
+          src={logo}
+          width={90}
+             height={90}
+          />
+        
+        </div>
+
+        <form action="#!" onSubmit={loginFormSubmitted}
+         className="border border-secondary rounded p-4 w-96 bg-white"
+           
+        >
+          <div className="form-outline mb-4 flex-col space-x-5">
+          
             <label
               htmlFor="user_email"
-              className="block text-sm font-medium mb-2 ps-2"
+              className="form-label font-bold"
             >
               Email
             </label>
             <input
               type="email"
-              className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
-              placeholder="Enter here"
+              className="form-control  max-w-lg"
+                 placeholder="Enter here"
               id="user_email"
               name="user_email"
               onChange={(event) => {
@@ -72,16 +86,17 @@ const Login = () => {
             />
           </div>
           {/* password */}
-          <div className="mt-3">
+          <div className="form-outline mb-4 flex-col space-x-5">
+          
             <label
               htmlFor="user_password"
-              className="block text-sm font-medium mb-2 ps-2"
+             className="form-label font-bold"
             >
               Password
             </label>
             <input
               type="password"
-              className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
+              className="form-control max-w-lg"
               placeholder="Enter here"
               id="user_password"
               onChange={(event) => {
@@ -97,16 +112,11 @@ const Login = () => {
           <div className="mt-3 text-center">
             <button
               type="submit"
-              className="px-3 py-2 bg-green-600  rounded hover:bg-green-400"
-            >
+              className="w-full bg-blue-500 m-2 p-2 font-bold  hover:text-white"
+                >
               Login
             </button>
-            <button
-              type="button"
-              className="px-3 py-2 bg-orange-600 ms-3 rounded hover:bg-orange-400"
-            >
-              Reset
-            </button>
+            
           </div>
         </form>
       </div>

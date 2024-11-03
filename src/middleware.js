@@ -57,6 +57,8 @@ export const config = {
     "/signup",
     "/add-task",
     "/show-tasks",
+    "/add-incident",
+    "/show-incidents",
     "/profile/:path*",
     "/api/:path*",
   ],

@@ -1,39 +1,39 @@
 import UserContext from "@/context/userContext";
 import React, { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
-const Task = ({ task, deleteTaskParent }) => {
+const Incident = ({ incident, deleteIncidentParent }) => {
   const { user } = useContext(UserContext);
 
-  function deleteTask(taskId) {
+  function deleteIncident(incidentId) {
     // ....
-    deleteTaskParent(taskId);
+    deleteIncidentParent(incidentId);
   }
 
   return (
     <div
       className={` shadow-lg mt-2 rounded-md ${
-        task.status == "completed" ? "bg-green-500" : "bg-gray-800"
+        incident.status == "high" ? "bg-red-500" : "bg-green-800"
       }`}
     >
       <div className="p-5">
         <div className="flex justify-between">
-          <h1 className="text-2xl font-semibold text-white">{task.title}</h1>
+          <h1 className="text-2xl font-semibold">{incident.title}</h1>
           <span
             onClick={() => {
-              deleteTask(task._id);
+              deleteIncident(incident._id);
             }}
             className="shadow-lg hover:bg-gray-900 bg-gray-950 rounded-full w-9 h-9 flex justify-center items-center cursor-pointer hover:text-white"
           >
             <RxCross1 />
           </span>
         </div>
-        <p className="font-normal text-gray-200">{task.content}</p>
+        <p className="font-normal">{incident.content}</p>
         <div className="flex justify-between mt-3">
           <p className="text-left">
-            Status: <span className="font-bold text-gray-300">{task.status}</span>
+            Status: <span className="font-bold">{incident.status}</span>
           </p>
           <p className="text-right">
-            Author: <span className="font-bold text-gray-100">{user?.name}</span>
+            Author: <span className="font-bold">{user?.name}</span>
           </p>
         </div>
       </div>
@@ -41,4 +41,4 @@ const Task = ({ task, deleteTaskParent }) => {
   );
 };
 
-export default Task;
+export default Incident;

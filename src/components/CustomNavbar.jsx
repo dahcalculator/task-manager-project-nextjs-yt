@@ -26,8 +26,8 @@ const CustomNavbar = () => {
   return (
     <nav className="bg-blue-600 h-16 py-2 px-36 flex justify-between items-center">
       <div className="brand">
-        <h1 className="text-2xl font-semibold">
-          <a href="#!"> Task Manager</a>
+        <h1 className="text-2xl text-white font-semibold">
+          <a href="#!"> Security personnel management system</a>
         </h1>
       </div>
       <div>
@@ -47,6 +47,16 @@ const CustomNavbar = () => {
               <li>
                 <Link href={"/show-tasks"} className="hover:text-blue-200">
                   Show Tasks
+                </Link>
+              </li>
+              <li>
+                <Link href="/add-incident" className="hover:text-blue-200">
+                  Add incident
+                </Link>
+              </li>
+              <li>
+                <Link href={"/show-incidents"} className="hover:text-blue-200">
+                  Show incidents
                 </Link>
               </li>
             </>
@@ -69,10 +79,7 @@ const CustomNavbar = () => {
           {!context.user && (
             <>
               <li>
-                <Link href="/login">Login</Link>
-              </li>
-              <li>
-                <Link href="/signup">Signup</Link>
+                <Link className="hover-text-white" href="/login">Login</Link>
               </li>
             </>
           )}
