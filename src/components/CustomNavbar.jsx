@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext } from "react";
 import { toast } from "react-toastify";
+import logo from "@/assets/logo.png"
+import Image from "next/image";
 
 const CustomNavbar = () => {
   const context = useContext(UserContext);
@@ -27,7 +29,11 @@ const CustomNavbar = () => {
     <nav className="bg-blue-600 h-16 py-2 px-36 flex justify-between items-center">
       <div className="brand">
         <h1 className="text-2xl text-white font-semibold">
-          <a href="#!"> Security personnel management system</a>
+        <Image
+          src={logo}
+          width={50}
+             height={50}
+          />
         </h1>
       </div>
       <div>
@@ -49,16 +55,7 @@ const CustomNavbar = () => {
                   Show Tasks
                 </Link>
               </li>
-              <li>
-                <Link href="/add-incident" className="hover:text-blue-200">
-                  Add incident
-                </Link>
-              </li>
-              <li>
-                <Link href={"/show-incidents"} className="hover:text-blue-200">
-                  Show incidents
-                </Link>
-              </li>
+              
             </>
           )}
         </ul>

@@ -55,7 +55,7 @@ const Login = () => {
           width={90}
              height={90}
           />
-        
+        <div className="text-1xl text-bold">security management personnel system</div>
         </div>
 
         <form action="#!" onSubmit={loginFormSubmitted}

@@ -18,7 +18,7 @@ const IncidentSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["low", "high"],
-    default: "pending",
+    default: "low",
   },
 
   userId: {

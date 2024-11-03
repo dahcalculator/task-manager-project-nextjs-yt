@@ -13,8 +13,6 @@ const ShowIncidents = () => {
       const incidents = await getIncidentsOfUser(userId);
       setIncidents([...incidents].reverse());
       console.log(incidents);
-      console.log(incidents)
-
     } catch (error) {
       console.log(error);
     }
