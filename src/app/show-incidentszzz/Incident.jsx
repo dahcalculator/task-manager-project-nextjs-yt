@@ -12,12 +12,12 @@ const Incident = ({ incident, deleteIncidentParent }) => {
   return (
     <div
       className={` shadow-lg mt-2 rounded-md ${
-        incident.status == "completed" ? "bg-green-500" : "bg-gray-800"
+        incident.status == "high" ? "bg-red-500" : "bg-green-800"
       }`}
     >
       <div className="p-5">
         <div className="flex justify-between">
-          <h1 className="text-2xl font-semibold text-white">{incident.title}</h1>
+          <h1 className="text-2xl font-semibold">{incident.title}</h1>
           <span
             onClick={() => {
               deleteIncident(incident._id);
@@ -27,13 +27,13 @@ const Incident = ({ incident, deleteIncidentParent }) => {
             <RxCross1 />
           </span>
         </div>
-        <p className="font-normal text-gray-200">{incident.content}</p>
+        <p className="font-normal">{incident.content}</p>
         <div className="flex justify-between mt-3">
           <p className="text-left">
-            Status: <span className="font-bold text-gray-300">{incident.status}</span>
+            Status: <span className="font-bold">{incident.status}</span>
           </p>
           <p className="text-right">
-            Author: <span className="font-bold text-gray-100">{user?.name}</span>
+            Author: <span className="font-bold">{user?.name}</span>
           </p>
         </div>
       </div>

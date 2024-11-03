@@ -11,7 +11,7 @@ const UserSachema = new Schema({
     type: String,
     require: [true, "Password Required !!"],
   },
-  about: String,
+  position: String,
   profileURL: String,
   //   address: {
   //     street: String,

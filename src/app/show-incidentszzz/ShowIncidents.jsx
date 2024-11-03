@@ -6,13 +6,15 @@ import Incident from "./Incident";
 import { toast } from "react-toastify";
 
 const ShowIncidents = () => {
-  const [incidents, setincidents] = useState([]);
+  const [incidents, setIncidents] = useState([]);
   const context = useContext(UserContext);
   async function loadIncidents(userId) {
     try {
       const incidents = await getIncidentsOfUser(userId);
       setIncidents([...incidents].reverse());
       console.log(incidents);
+      console.log(incidents)
+
     } catch (error) {
       console.log(error);
     }

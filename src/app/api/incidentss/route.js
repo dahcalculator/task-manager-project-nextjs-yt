@@ -1,4 +1,4 @@
-// /tasks
+// /incidents
 
 import { getResponseMessage } from "@/helper/responseMessage";
 import { Incident } from "@/models/incident";
@@ -6,19 +6,19 @@ import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import { connectDb } from "@/helper/db";
 
-//get all the tasks
+//get all the incidents
 export async function GET(request) {
   try {
     await connectDb();
     const incidents = await Incident.find();
-    return NextResponse.json(incident);
+    return NextResponse.json(incidents);
   } catch (error) {
     console.log(error);
     return "Error in gettting data !!", 404, false;
   }
 }
 
-// create all the tasks
+// create all the incidents
 export async function POST(request) {
   const { title, content, userId, status } = await request.json();
 

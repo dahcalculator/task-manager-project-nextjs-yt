@@ -9,7 +9,7 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
-    about: "",
+    position: "",
     profileURL:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
   });
@@ -42,7 +42,7 @@ const Signup = () => {
         name: "",
         email: "",
         password: "",
-        about: "",
+        position: "",
         profileURL:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
       });
@@ -60,7 +60,7 @@ const Signup = () => {
       name: "",
       email: "",
       password: "",
-      about: "",
+      position: "",
       profileURL:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1K1evWjMTfR3IMBxQxXSGV2pTaO2rAP7EzIMB4u0YwxfFL4pJ269eff6sNvuxtjI7c4s",
     });
@@ -151,25 +151,26 @@ const Signup = () => {
             {/* about section */}
             <div className="mt-3">
               <label
-                htmlFor="user_about"
+                htmlFor="user_position"
                 className="block text-sm font-medium mb-2 ps-2"
               >
-                About
+                position
               </label>
-              <textarea
+              <input
+              type="text"
                 className="w-full p-3 rounded-2xl bg-gray-800 focus:ring-gray-400-100 border border-gray-800"
                 placeholder="Enter here"
-                id="user_about"
-                name="user_about"
+                id="user_position"
+                name="user_position"
                 rows={8}
                 onChange={(event) => {
                   setData({
                     ...data,
-                    about: event.target.value,
+                    position: event.target.value,
                   });
                 }}
-                value={data.about}
-              ></textarea>
+                value={data.position}
+              ></input>
             </div>
             <div className="mt-3 text-center">
               <button

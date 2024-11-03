@@ -13,9 +13,12 @@ export async function getIncidentsOfUser(userId) {
     .then((response) => response.data);
   return result;
 }
+
 export async function deleteIncident(incidentId) {
   const result = await httpAxios
     .delete(`/api/incidents/${incidentId}`)
     .then((response) => response.data);
   return result;
 }
+
+

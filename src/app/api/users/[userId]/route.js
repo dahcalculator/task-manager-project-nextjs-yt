@@ -38,13 +38,13 @@ export async function DELETE(request, { params }) {
 export async function PUT(request, { params }) {
   const { userId } = params;
 
-  const { name, password, about, profileURL } = await request.json();
+  const { name, password, position, profileURL } = await request.json();
 
   try {
     const user = await User.findById(userId);
 
     user.name = name;
-    user.about = about;
+    user.position = position;
     user.password = password;
     user.profileURL = profileURL;
     // add more informationss

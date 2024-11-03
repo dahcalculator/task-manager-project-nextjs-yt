@@ -12,7 +12,7 @@ export const connectDb = async () => {
 
   try {
     const { connection } = await mongoose.connect(process.env.MONGO_DB_URL, {
-      dbName: "work_manager",
+      dbName: "crud",
     });
 
     console.log("db connected...");
@@ -25,7 +25,7 @@ export const connectDb = async () => {
     //   name: "test name",
     //   email: "test@gmail.com",
     //   password: "testpassword",
-    //   about: "this is testing",
+    //   position: "this is testing",
     // });
 
     // await uuser.save();

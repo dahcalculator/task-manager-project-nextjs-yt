@@ -13,9 +13,25 @@ export async function getTasksOfUser(userId) {
     .then((response) => response.data);
   return result;
 }
+
 export async function deleteTask(taskId) {
   const result = await httpAxios
     .delete(`/api/tasks/${taskId}`)
     .then((response) => response.data);
   return result;
 }
+
+
+const getTopicById = async (id) => {
+  try {
+    const res = await fetch(`http://localhost:3000/api/incidents/${id}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      throw new Error("Failed to fetch case");
+    }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
