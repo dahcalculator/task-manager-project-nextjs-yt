@@ -11,8 +11,11 @@ export async function getIncidentsOfUser(userId) {
   const result = await httpAxios
     .get(`/api/users/${userId}/incidents`)
     .then((response) => response.data);
+    
+console.log(result)
   return result;
 }
+
 
 export async function deleteIncident(incidentId) {
   const result = await httpAxios

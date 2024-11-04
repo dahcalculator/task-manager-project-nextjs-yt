@@ -21,17 +21,3 @@ export async function deleteTask(taskId) {
   return result;
 }
 
-
-const getTopicById = async (id) => {
-  try {
-    const res = await fetch(`http://localhost:3000/api/incidents/${id}`, {
-      cache: "no-store",
-    });
-    if (!res.ok) {
-      throw new Error("Failed to fetch case");
-    }
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};

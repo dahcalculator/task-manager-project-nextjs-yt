@@ -7,16 +7,19 @@ import jwt from "jsonwebtoken";
 import { connectDb } from "@/helper/db";
 
 //get all the tasks
-export async function GET(request) {
+
+export async function GET() {
   try {
-    await connectDb();
-    const incidents = await Incident.find();
-    return NextResponse.json(incident);
-  } catch (error) {
-    console.log(error);
-    return "Error in gettting data !!", 404, false;
-  }
+  await connectDb();
+  const incidents = await Incident.find();
+  return NextResponse.json(incidents);
+} catch (error) {
+  console.log(error);
+  return "Error in gettting data !!", 404, false;
 }
+}
+
+
 
 // create all the tasks
 export async function POST(request) {
