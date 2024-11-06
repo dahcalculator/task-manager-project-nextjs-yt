@@ -58,7 +58,7 @@ useEffect(() => {
       Position: {context.user.position}
       </div>
       <div>
-        Contact number: {context.user.email}
+        Contact: {context.user.email}
       </div>
       </div>
 

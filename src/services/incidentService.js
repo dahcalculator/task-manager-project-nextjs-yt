@@ -21,4 +21,4 @@ export async function deleteIncident(incidentId) {
   return result;
 }
 
-
+};
