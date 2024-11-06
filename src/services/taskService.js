@@ -22,7 +22,3 @@ export async function deleteTask(taskId) {
 }
 
 
-export async function getAlluser {
-  const result = await httpAxios
-  .get(`/api/`)
-}
