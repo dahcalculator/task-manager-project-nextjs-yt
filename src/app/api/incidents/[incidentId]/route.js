@@ -11,7 +11,7 @@ export async function GET(request, { params }) {
 
   try {
     await connectDb();
-    const incident = await Incident.findById(taskId);
+    const incident = await Incident.findById(incidentId);
     return NextResponse.json(incident);
   } catch (error) {
     console.log(error);

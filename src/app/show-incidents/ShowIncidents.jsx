@@ -6,7 +6,7 @@ import Incident from "./Incident";
 import { toast } from "react-toastify";
 
 const ShowIncidents = () => {
-  const [incidents, setincidents] = useState([]);
+  const [incidents, setIncidents] = useState([]);
   const context = useContext(UserContext);
   async function loadIncidents(userId) {
     try {
@@ -18,7 +18,7 @@ const ShowIncidents = () => {
       console.log(error);
     }
   }
-
+  
   useEffect(() => {
     if (context.user) {
       loadIncidents(context.user._id);
@@ -38,6 +38,7 @@ const ShowIncidents = () => {
     }
   }
 
+  console.log(incidents)
   return (
     <div className="grid grid-cols-12 mt-3">
       <div className="col-span-6 col-start-4">

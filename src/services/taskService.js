@@ -21,8 +21,11 @@ export async function deleteTask(taskId) {
   return result;
 }
 
+<<<<<<< HEAD
 
 export async function getAlluser {
   const result = await httpAxios
   .get(`/api/`)
 }
+=======
+>>>>>>> a9b5235519803ce327becc739dc3d8313b0da624
